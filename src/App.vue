@@ -8,6 +8,7 @@ import Class from './components/Class.vue'
 import List from './components/List.vue'
 import Event from './components/Event.vue'
 import Form from './components/Form.vue'
+import LifeCycle from './components/LifeCycle.vue'
 </script>
 
 <template>
@@ -19,6 +20,7 @@ import Form from './components/Form.vue'
   <List />
   <Event />
   <Form />
+  <LifeCycle />
 </template>
 
 <style>
