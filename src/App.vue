@@ -7,6 +7,7 @@ import Computed from './components/Computed.vue'
 import Class from './components/Class.vue'
 import List from './components/List.vue'
 import Event from './components/Event.vue'
+import Form from './components/Form.vue'
 </script>
 
 <template>
@@ -17,6 +18,7 @@ import Event from './components/Event.vue'
   <Class />
   <List />
   <Event />
+  <Form />
 </template>
 
 <style>

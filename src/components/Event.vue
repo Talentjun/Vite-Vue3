@@ -1,16 +1,29 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 const count = ref(0)
+
+const getValue = reactive({
+  name: {
+    firstname: {
+      a: 'aaa',
+      b: 'bbb',
+    },
+    lastname: 'jun',
+  },
+})
 
 function doThis() {}
 
 function onSubmit() {}
 
 function doThat() {}
+
+function onScroll() {}
 /* 使用修饰符时需要注意调用顺序，因为相关代码是以相同的顺序生成的。因此使用 @click.prevent.self 会阻止元素及其子元素的所有点击事件的默认行为而 @click.self.prevent 则只会阻止对元素本身的点击事件的默认行为。 */
 </script>
 
 <template>
+  <div>获取name {{ getValue?.name?.firstname?.a }}</div>
   <button @click="count++">Add 1</button>
   <p>Count is {{ count }}</p>
 
