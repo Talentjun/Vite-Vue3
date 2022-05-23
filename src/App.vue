@@ -53,6 +53,7 @@ function changeTitle() {
 
   <Slot />
   <span>我要在slot展示</span>
+  <!-- 以上代码会被解析成这样 -->
   <!-- <Slot>
     <span>我要在slot展示</span>
   </Slot> -->
