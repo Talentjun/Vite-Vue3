@@ -13,6 +13,7 @@ import LifeCycle from './components/LifeCycle.vue'
 import Watch from './components/Watch.vue'
 import TemplateRef from './components/TemplateRef.vue'
 import BlogPost from './components/BlogPost.vue'
+import Slot from './components/Slot.vue'
 
 const posts = ref([
   { id: 1, title: 'My journey with Vue' },
@@ -43,6 +44,18 @@ function changeTitle() {
     :title="post.title"
     @change-title="changeTitle"
   />
+
+  <Slot>
+    <template v-slot:only="{ only: str }"
+      >Something bad happened.{{ str }}</template
+    >
+  </Slot>
+
+  <Slot />
+  <span>我要在slot展示</span>
+  <!-- <Slot>
+    <span>我要在slot展示</span>
+  </Slot> -->
 </template>
 
 <style>
