@@ -1,6 +1,7 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import { ref } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 import About from './components/About.vue'
 import Computed from './components/Computed.vue'
@@ -11,6 +12,13 @@ import Form from './components/Form.vue'
 import LifeCycle from './components/LifeCycle.vue'
 import Watch from './components/Watch.vue'
 import TemplateRef from './components/TemplateRef.vue'
+import BlogPost from './components/BlogPost.vue'
+
+const posts = ref([
+  { id: 1, title: 'My journey with Vue' },
+  { id: 2, title: 'Blogging with Vue' },
+  { id: 3, title: 'Why Vue is so fun' },
+])
 </script>
 
 <template>
@@ -25,6 +33,7 @@ import TemplateRef from './components/TemplateRef.vue'
   <LifeCycle />
   <Watch />
   <TemplateRef />
+  <BlogPost v-for="post in posts" :key="post.id" :title="post.title" />
 </template>
 
 <style>
