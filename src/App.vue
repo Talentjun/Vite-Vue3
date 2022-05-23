@@ -1,7 +1,7 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import { ref, provide, readonly } from 'vue'
+import { ref, provide, readonly, computed } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 import About from './components/About.vue'
 import Computed from './components/Computed.vue'
@@ -16,6 +16,10 @@ import BlogPost from './components/BlogPost.vue'
 import Slot from './components/Slot.vue'
 import CustomInput from './components/CustomInput.vue'
 import ProvideInject from './components/ProvideInject.vue'
+
+import Home from './components/RouterComponent/Home.vue'
+import RouterAbout from './components/RouterComponent/About.vue'
+import NotFound from './components/RouterComponent/NotFound.vue'
 
 const posts = ref([
   { id: 1, title: 'My journey with Vue' },
@@ -44,6 +48,23 @@ provide('location', {
 
 /* 如果你想确保从 provide 传过来的数据不能被 injector 的组件更改，你可以使用readonly() 来包装提供的值 */
 // provide('read-only-count', readonly(count))
+
+/* router */
+const routes = {
+  '/': Home,
+  '/about': RouterAbout,
+}
+
+const currentPath = ref(window.location.hash)
+console.log('currentPath', currentPath)
+
+window.addEventListener('hashchange', () => {
+  currentPath.value = window.location.hash
+})
+
+const currentView = computed(() => {
+  return routes[currentPath.value.slice(1) || '/'] || NotFound
+})
 </script>
 
 <template>
@@ -87,6 +108,10 @@ provide('location', {
   {{ bookTitle }}
 
   <ProvideInject />
+  <h1>路由</h1>
+  <a href="#/">Home</a> | <a href="#/about">About</a> |
+  <a href="#/non-existent-path">Broken Link</a>
+  <component :is="currentView" />
 </template>
 
 <style>
