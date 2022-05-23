@@ -62,7 +62,12 @@ const bookTitle = ref('bookTitle')
     <span>我要在slot展示</span>
   </Slot> -->
   <h1></h1>
-  <CustomInput v-model="message" v-model:title="bookTitle" /> {{ message }}
+  <CustomInput
+    v-model="message"
+    v-model:title="bookTitle"
+    id="CustomInput id"
+  />
+  {{ message }}
   {{ bookTitle }}
 </template>
 
