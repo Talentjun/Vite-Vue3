@@ -14,6 +14,7 @@ import Watch from './components/Watch.vue'
 import TemplateRef from './components/TemplateRef.vue'
 import BlogPost from './components/BlogPost.vue'
 import Slot from './components/Slot.vue'
+import CustomInput from './components/CustomInput.vue'
 
 const posts = ref([
   { id: 1, title: 'My journey with Vue' },
@@ -24,6 +25,9 @@ const posts = ref([
 function changeTitle() {
   console.log('changeTitle')
 }
+
+const message = ref('hello')
+const bookTitle = ref('bookTitle')
 </script>
 
 <template>
@@ -57,6 +61,9 @@ function changeTitle() {
   <!-- <Slot>
     <span>我要在slot展示</span>
   </Slot> -->
+  <h1></h1>
+  <CustomInput v-model="message" v-model:title="bookTitle" /> {{ message }}
+  {{ bookTitle }}
 </template>
 
 <style>
