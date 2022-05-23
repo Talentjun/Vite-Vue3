@@ -1,7 +1,7 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import { ref } from 'vue'
+import { ref, provide, readonly } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 import About from './components/About.vue'
 import Computed from './components/Computed.vue'
@@ -15,6 +15,7 @@ import TemplateRef from './components/TemplateRef.vue'
 import BlogPost from './components/BlogPost.vue'
 import Slot from './components/Slot.vue'
 import CustomInput from './components/CustomInput.vue'
+import ProvideInject from './components/ProvideInject.vue'
 
 const posts = ref([
   { id: 1, title: 'My journey with Vue' },
@@ -28,6 +29,21 @@ function changeTitle() {
 
 const message = ref('hello')
 const bookTitle = ref('bookTitle')
+
+/* provide inject */
+const location = ref('North Pole')
+
+function updateLocation() {
+  location.value = 'South Pole'
+}
+
+provide('location', {
+  location,
+  updateLocation,
+})
+
+/* 如果你想确保从 provide 传过来的数据不能被 injector 的组件更改，你可以使用readonly() 来包装提供的值 */
+// provide('read-only-count', readonly(count))
 </script>
 
 <template>
@@ -69,6 +85,8 @@ const bookTitle = ref('bookTitle')
   />
   {{ message }}
   {{ bookTitle }}
+
+  <ProvideInject />
 </template>
 
 <style>
