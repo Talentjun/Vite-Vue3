@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { ref, watch, reactive } from 'vue'
+import { ref, watch, reactive, watchEffect } from 'vue'
 import axios from 'axios'
 
 const question = ref('')
@@ -94,13 +94,13 @@ watch(
 // watchEffect 仅会在其同步执行期间，才追踪依赖。在使用异步回调时，只有在第一个 await 正常工作前访问到的 property 才会被追踪。
 
 // 如果想在侦听器回调中能访问被 Vue 更新之后的DOM，你需要指明 flush: 'post' 选项：
-watch(source, callback, {
+/* watch(source, callback, {
   flush: 'post',
 })
 
 watchEffect(callback, {
   flush: 'post',
-})
+}) */
 
 // 要手动停止一个侦听器，请调用 watch 或 watchEffect 返回的函数：
 const unwatch = watchEffect(() => {})

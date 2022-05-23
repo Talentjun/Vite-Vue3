@@ -10,6 +10,7 @@ import Event from './components/Event.vue'
 import Form from './components/Form.vue'
 import LifeCycle from './components/LifeCycle.vue'
 import Watch from './components/Watch.vue'
+import TemplateRef from './components/TemplateRef.vue'
 </script>
 
 <template>
@@ -23,6 +24,7 @@ import Watch from './components/Watch.vue'
   <Form />
   <LifeCycle />
   <Watch />
+  <TemplateRef />
 </template>
 
 <style>
