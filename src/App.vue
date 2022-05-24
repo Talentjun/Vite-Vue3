@@ -17,10 +17,6 @@ import Slot from './components/Slot.vue'
 import CustomInput from './components/CustomInput.vue'
 import ProvideInject from './components/ProvideInject.vue'
 
-import Home from './components/RouterComponent/Home.vue'
-import RouterAbout from './components/RouterComponent/About.vue'
-import NotFound from './components/RouterComponent/NotFound.vue'
-
 const posts = ref([
   { id: 1, title: 'My journey with Vue' },
   { id: 2, title: 'Blogging with Vue' },
@@ -48,23 +44,6 @@ provide('location', {
 
 /* 如果你想确保从 provide 传过来的数据不能被 injector 的组件更改，你可以使用readonly() 来包装提供的值 */
 // provide('read-only-count', readonly(count))
-
-/* router */
-const routes = {
-  '/': Home,
-  '/about': RouterAbout,
-}
-
-const currentPath = ref(window.location.hash)
-console.log('currentPath', currentPath)
-
-window.addEventListener('hashchange', () => {
-  currentPath.value = window.location.hash
-})
-
-const currentView = computed(() => {
-  return routes[currentPath.value.slice(1) || '/'] || NotFound
-})
 </script>
 
 <template>
@@ -109,9 +88,11 @@ const currentView = computed(() => {
 
   <ProvideInject />
   <h1>路由</h1>
-  <a href="#/">Home</a> | <a href="#/about">About</a> |
-  <a href="#/non-existent-path">Broken Link</a>
-  <component :is="currentView" />
+  <p>
+    <router-link to="/home">首页</router-link>
+    <router-link to="/about">关于</router-link>
+  </p>
+  <router-view></router-view>
 </template>
 
 <style>
