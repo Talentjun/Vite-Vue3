@@ -16,6 +16,7 @@ import BlogPost from './components/BlogPost.vue'
 import Slot from './components/Slot.vue'
 import CustomInput from './components/CustomInput.vue'
 import ProvideInject from './components/ProvideInject.vue'
+import Vuexs from './components/vuex.vue'
 
 const posts = ref([
   { id: 1, title: 'My journey with Vue' },
@@ -87,6 +88,7 @@ provide('location', {
   {{ bookTitle }}
 
   <ProvideInject />
+  <Vuexs></Vuexs>
   <h1>路由</h1>
   <p>
     <router-link to="/home">首页</router-link>
