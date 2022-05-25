@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref } from 'vue'
+import { ref } from 'vue'
 const props = defineProps(['fathers'])
 console.log('aboutsecondchild', props)
 let count = ref(0)
