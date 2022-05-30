@@ -2,7 +2,7 @@
   <p>title: {{ title }}</p>
 </template>
 <script setup>
-import { defineEmits } from 'vue'
+// import { defineEmits } from 'vue'
 
 const data = defineProps(['title']) // 是一个Proxy对象 {title: 'xxxxx'}
 console.log(data)
