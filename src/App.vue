@@ -17,6 +17,7 @@ import Slot from './components/Slot.vue'
 import CustomInput from './components/CustomInput.vue'
 import ProvideInject from './components/ProvideInject.vue'
 import Vuexs from './components/vuex.vue'
+import Vueuse from './components/Vueuse.vue'
 
 const posts = ref([
   { id: 1, title: 'My journey with Vue' },
@@ -89,6 +90,7 @@ provide('location', {
 
   <ProvideInject />
   <Vuexs></Vuexs>
+  <Vueuse></Vueuse>
   <h1>路由</h1>
   <p>
     <router-link to="/home">首页</router-link>
