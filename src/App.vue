@@ -18,6 +18,7 @@ import CustomInput from './components/CustomInput.vue'
 import ProvideInject from './components/ProvideInject.vue'
 import Vuexs from './components/vuex.vue'
 import Vueuse from './components/Vueuse.vue'
+import Pinia from './components/Pinia.vue'
 
 const posts = ref([
   { id: 1, title: 'My journey with Vue' },
@@ -97,6 +98,8 @@ provide('location', {
     <router-link to="/about">关于</router-link>
   </p>
   <router-view></router-view>
+  <h1>状态管理pinia</h1>
+  <Pinia />
 </template>
 
 <style>
