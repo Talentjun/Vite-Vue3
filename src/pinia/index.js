@@ -17,8 +17,11 @@ export const mainStore = defineStore('main', {
     }
   },
   actions: {
-    increment(name) {
-      this.counter = this.counter + 2 + name
+    increment() {
+      this.counter = this.counter
+    },
+    addMsg(name) {
+      this.msg = this.msg + ' ' + name
     },
   }
 })

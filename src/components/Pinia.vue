@@ -28,7 +28,7 @@ function handleClick() {
     console.log('state', state)
   })
 
-  // store.increment('yejun') // 加2+yejun
+  store.addMsg('yejun') // 加2+yejun
 
   setTimeout(() => {
     store.$reset() // 重置到默认值
