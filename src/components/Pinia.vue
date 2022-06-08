@@ -34,4 +34,8 @@ function handleClick() {
     store.$reset() // 重置到默认值
   }, 1000)
 }
+
+defineExpose({
+  counter,
+})
 </script>

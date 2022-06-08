@@ -19,6 +19,7 @@ import ProvideInject from './components/ProvideInject.vue'
 import Vuexs from './components/vuex.vue'
 import Vueuse from './components/Vueuse.vue'
 import Pinia from './components/Pinia.vue'
+import UseRef from './components/UseRef.vue'
 
 const posts = ref([
   { id: 1, title: 'My journey with Vue' },
@@ -100,6 +101,7 @@ provide('location', {
   <router-view></router-view>
   <h1>状态管理pinia</h1>
   <Pinia />
+  <UseRef />
 </template>
 
 <style>
