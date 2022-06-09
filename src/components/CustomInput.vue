@@ -4,9 +4,10 @@
 // v-model.capitalize 我们一起来创建一个自定义的修饰符 capitalize，它会自动将 v-model 绑定输入的字符串值第一个字母转为大写
 // v-model:title.capitalize
 import { useAttrs } from 'vue'
-defineProps(['modelValue', 'title'])
+const props = defineProps(['modelValue', 'title', 'subtitleModifiers'])
 defineEmits(['update:modelValue', 'update:title'])
 const attrs = useAttrs()
+console.log('subtitleModifiers', props.subtitleModifiers) // { capitalize: true }
 </script>
 
 <template>

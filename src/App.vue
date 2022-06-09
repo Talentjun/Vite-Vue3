@@ -35,6 +35,7 @@ function changeTitle() {
 
 const message = ref('hello')
 const bookTitle = ref('bookTitle')
+const subtitle = ref('subtitle')
 
 /* provide inject */
 const location = ref('North Pole')
@@ -84,9 +85,11 @@ provide('location', {
     <span>我要在slot展示</span>
   </Slot> -->
   <h1></h1>
+  <!-- 有参数又有修饰符的 v-model 绑定，生成的 prop 名将是 arg + "Modifiers" -->
   <CustomInput
     v-model="message"
     v-model:title="bookTitle"
+    v-model:subtitle.capitalize="subtitle"
     id="CustomInput id"
   />
   {{ message }}
