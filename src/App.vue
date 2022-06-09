@@ -21,6 +21,7 @@ import Vueuse from './components/Vueuse.vue'
 import Pinia from './components/Pinia.vue'
 import UseRef from './components/UseRef.vue'
 import UseSlotsAttrs from './components/UseSlots&Attrs.vue'
+import CssModule from './components/CssModule.vue'
 
 const posts = ref([
   { id: 1, title: 'My journey with Vue' },
@@ -104,6 +105,7 @@ provide('location', {
   <Pinia />
   <UseRef />
   <UseSlotsAttrs name="yejun" />
+  <CssModule />
 </template>
 
 <style>
