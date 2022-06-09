@@ -3,11 +3,19 @@
   <p :class="classes.red">I am red</p>
 
   <p :class="css.red">setup red</p>
+
+  <p class="text">i am theme color</p>
 </template>
 
 <style module="classes">
 .red {
   color: red;
+}
+</style>
+
+<style scoped>
+.text {
+  color: v-bind('theme.color');
 }
 </style>
 
@@ -23,4 +31,8 @@
 import { useCssModule } from 'vue'
 const css = useCssModule('classes')
 console.log('useCssModule', css.red) // 已经转换好的css 转换好的_red_xad9b_2
+
+const theme = {
+  color: 'blue',
+}
 </script>
