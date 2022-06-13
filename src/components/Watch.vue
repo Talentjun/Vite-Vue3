@@ -68,6 +68,12 @@ function changeXY() {
 
 const obj = reactive({ count: 0 })
 // 监听对象
+/* 
+// 这不起作用，因为你向 watch() 传入了一个 number
+watch(obj.count, (count) => {
+  console.log(`count is: ${count}`)
+})
+*/
 // 提供一个 getter 函数
 watch(
   () => obj.count,
