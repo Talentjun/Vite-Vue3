@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import Home from '../components/RouterComponent/Home.vue'
+import Home from '@/Home.vue'
 import RouterAbout from '../components/RouterComponent/About.vue'
 import NotFound from '../components/RouterComponent/NotFound.vue'
 
